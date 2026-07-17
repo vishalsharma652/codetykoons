@@ -1,6 +1,7 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
 import { FiTrendingUp, FiCode, FiSmartphone, FiCpu, FiCheck } from 'react-icons/fi';
+import Link from 'next/link';
 
 const services = [
   {
@@ -48,11 +49,6 @@ const services = [
     textColor: 'text-[#10b981]',
   },
 ];
-
-function scrollTo(id: string) {
-  const el = document.getElementById(id);
-  if (el) el.scrollIntoView({ behavior: 'smooth' });
-}
 
 export default function Services() {
   const [visibleIds, setVisibleIds] = useState<string[]>([]);
@@ -116,12 +112,12 @@ export default function Services() {
                   ))}
                 </ul>
                 <div className="pt-4 border-t border-white/[0.07]">
-                  <button
-                    onClick={() => scrollTo('contact')}
-                    className={`bg-none border-none cursor-pointer font-semibold text-sm transition-all duration-300 hover:tracking-wide p-0 bg-gradient-to-r ${service.gradient} bg-clip-text text-transparent`}
+                  <Link
+                    href="/contact"
+                    className={`font-semibold text-sm transition-all duration-300 hover:tracking-wide p-0 bg-gradient-to-r ${service.gradient} bg-clip-text text-transparent inline-block`}
                   >
                     Get Started →
-                  </button>
+                  </Link>
                 </div>
               </div>
             );

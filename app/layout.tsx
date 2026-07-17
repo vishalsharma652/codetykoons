@@ -1,4 +1,6 @@
 import './globals.css';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 export const metadata = {
   title: 'CodeTykoons — Digital Solutions & AI Automation',
@@ -13,7 +15,11 @@ export const metadata = {
   },
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -25,7 +31,13 @@ export default function RootLayout({ children }) {
         />
         <link rel="icon" href="/logo.jpeg" />
       </head>
-      <body>{children}</body>
+      <body className="flex flex-col min-h-screen">
+        <Navbar />
+        <div className="flex-grow pt-20">
+          {children}
+        </div>
+        <Footer />
+      </body>
     </html>
   );
 }

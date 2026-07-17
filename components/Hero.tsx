@@ -1,11 +1,7 @@
 'use client';
 import { useEffect, useRef } from 'react';
 import { FiArrowRight } from 'react-icons/fi';
-
-function scrollTo(id: string) {
-  const el = document.getElementById(id);
-  if (el) el.scrollIntoView({ behavior: 'smooth' });
-}
+import Link from 'next/link';
 
 export default function Hero() {
   const headingRef = useRef<HTMLHeadingElement>(null);
@@ -24,7 +20,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden px-8 py-32 md:py-16" id="home">
+    <section className="min-h-[90vh] flex items-center justify-center relative overflow-hidden px-8 py-32 md:py-16" id="home">
       {/* Background Orbs */}
       <div className="absolute inset-0 pointer-events-none z-0">
         <div className="absolute w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle,rgba(99,102,241,0.18)_0%,transparent_70%)] -top-[100px] -left-[100px] animate-float-orb-1" />
@@ -36,7 +32,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-[linear-gradient(rgba(99,102,241,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(99,102,241,0.05)_1px,transparent_1px)] bg-[size:60px_60px] pointer-events-none z-0" />
 
       <div className="relative z-10 text-center max-w-[820px] mx-auto">
-        <div className="inline-flex items-center gap-2 bg-[#6366f1]/12 border border-[#6366f1]/30 px-4 py-1.5 rounded-full text-[13px] font-semibold text-[#a5b4fc] mb-6 mt-10">
+        <div className="inline-flex items-center gap-2 bg-[#6366f1]/12 border border-[#6366f1]/30 px-4 py-1.5 rounded-full text-[13px] font-semibold text-[#a5b4fc] mb-6">
           <span className="w-2 h-2 rounded-full bg-[#6366f1] shadow-[0_0_8px_#6366f1] animate-pulse" />
           Innovating the Digital World
         </div>
@@ -52,13 +48,13 @@ export default function Hero() {
         </p>
 
         <div className="flex gap-4 justify-center flex-wrap mb-16">
-          <button className="inline-flex items-center gap-2 bg-gradient-to-r from-[#6366f1] to-[#a855f7] text-white px-8 py-3.5 rounded-full font-bold text-base transition-all duration-300 shadow-[0_0_30px_rgba(99,102,241,0.4)] hover:shadow-[0_0_50px_rgba(99,102,241,0.6)] hover:-translate-y-1 cursor-pointer border-none" id="hero-explore-btn" onClick={() => scrollTo('services')}>
+          <Link href="/services" className="inline-flex items-center gap-2 bg-gradient-to-r from-[#6366f1] to-[#a855f7] text-white px-8 py-3.5 rounded-full font-bold text-base transition-all duration-300 shadow-[0_0_30px_rgba(99,102,241,0.4)] hover:shadow-[0_0_50px_rgba(99,102,241,0.6)] hover:-translate-y-1 cursor-pointer border-none" id="hero-explore-btn">
             Explore Services
             <FiArrowRight size={18} />
-          </button>
-          <button className="inline-flex items-center bg-transparent text-white px-8 py-3.5 rounded-full font-bold text-base border border-white/20 transition-all duration-300 hover:bg-white/5 hover:border-white/40 hover:-translate-y-[2px] cursor-pointer" id="hero-contact-btn" onClick={() => scrollTo('contact')}>
+          </Link>
+          <Link href="/contact" className="inline-flex items-center bg-transparent text-white px-8 py-3.5 rounded-full font-bold text-base border border-white/20 transition-all duration-300 hover:bg-white/5 hover:border-white/40 hover:-translate-y-[2px] cursor-pointer" id="hero-contact-btn">
             Contact Us
-          </button>
+          </Link>
         </div>
 
         <div className="flex items-center justify-center gap-8 flex-wrap">
