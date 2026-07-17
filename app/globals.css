@@ -1,17 +1,14 @@
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --bg-primary: #070714;
-  --bg-secondary: #0d0d2b;
-  --accent-primary: #6366f1;
-  --accent-secondary: #a855f7;
-  --text-primary: #ffffff;
-  --text-secondary: rgba(255, 255, 255, 0.6);
-  --border: rgba(255, 255, 255, 0.08);
+  --color-bg-primary: #070714;
+  --color-bg-secondary: #0d0d2b;
+  --color-accent-primary: #6366f1;
+  --color-accent-secondary: #a855f7;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: rgba(255, 255, 255, 0.6);
 }
 
 html {
@@ -20,12 +17,9 @@ html {
 }
 
 body {
-  background: var(--bg-primary);
-  color: var(--text-primary);
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 }
 
@@ -34,35 +28,39 @@ body {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--bg-primary);
+  background: var(--color-bg-primary);
 }
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(180deg, #6366f1, #a855f7);
   border-radius: 10px;
 }
 
-/* Selection */
+/* Selection style */
 ::selection {
-  background: rgba(99, 102, 241, 0.3);
-  color: #fff;
+  background: rgba(99, 102, 241, 0.35);
+  color: #ffffff;
 }
 
-/* Section dividers */
-section + section {
-  position: relative;
+/* Floating Orb keyframe animations */
+@keyframes floatOrb {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(30px, -30px) scale(1.05); }
 }
 
-/* Smooth transitions on interactive elements */
-a, button {
-  transition: all 0.3s ease;
+@keyframes pulseOrb {
+  0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 1; transform: translate(-50%, -50%) scale(1.2); }
 }
 
-/* Image rendering */
-img {
-  max-width: 100%;
-  height: auto;
+/* Utility classes for premium animations */
+.animate-float-orb-1 {
+  animation: floatOrb 8s ease-in-out infinite;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Outfit', sans-serif;
+.animate-float-orb-2 {
+  animation: floatOrb 10s ease-in-out infinite reverse;
+}
+
+.animate-pulse-orb {
+  animation: pulseOrb 6s ease-in-out infinite;
 }
