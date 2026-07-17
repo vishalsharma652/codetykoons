@@ -58,7 +58,7 @@ export default function WhyChooseUs() {
           <h2 className="font-['Outfit'] text-[clamp(2.2rem,4vw,3.2rem)] font-extrabold text-white tracking-tight leading-[1.2] mb-6">
             Why Partner with <span className="bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent">CodeTykoons?</span>
           </h2>
-          <p className="text-white/60 text-base leading-relaxed mb-6">
+          <p className="text-white/80 text-base leading-relaxed mb-6">
             We are dedicated to building modern products that elevate your business. We don't just write code; we deliver high-performance growth systems customized to your exact requirements.
           </p>
         </div>
@@ -71,12 +71,12 @@ export default function WhyChooseUs() {
               className={`bg-white/[0.01] border rounded-[22px] p-6 transition-all duration-500 flex flex-col gap-4 ${feat.color} ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
               style={{ transitionDelay: `${index * 80}ms` }}
             >
-              <div className="w-10 h-10 rounded-xl bg-white/[0.03] flex items-center justify-center border border-white/5 select-none">
+              <div className="w-10 h-10 rounded-xl bg-white/[0.03] flex items-center justify-center border border-white/5 select-none" aria-hidden="true">
                 {feat.icon}
               </div>
               <div>
-                <h4 className="text-[17px] font-bold text-white mb-2 font-['Outfit']">{feat.title}</h4>
-                <p className="text-white/50 text-[13px] leading-relaxed m-0">{feat.desc}</p>
+                <h3 className="text-[17px] font-bold text-white mb-2 font-['Outfit']">{feat.title}</h3>
+                <p className="text-white/70 text-[13.5px] leading-relaxed m-0">{feat.desc}</p>
               </div>
             </div>
           ))}

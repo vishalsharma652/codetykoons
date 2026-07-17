@@ -34,7 +34,7 @@ export default function Navbar() {
 
           {/* Logo Link */}
           <Link href="/" className="flex items-center gap-[10px] p-0 text-decoration-none select-none" aria-label="Go to Home" onClick={() => setMenuOpen(false)}>
-            <Image src="/logo.jpeg" alt="CodeTykoons Logo" width={40} height={40} className="rounded-lg object-contain" />
+            <Image src="/logo.jpeg" alt="CodeTykoons Logo" width={40} height={40} className="rounded-lg object-contain" priority />
             <span className="font-['Outfit'] text-[22px] font-bold text-white tracking-tight">Code<span className="bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent">Tykoons</span></span>
           </Link>
 
@@ -46,7 +46,7 @@ export default function Navbar() {
                 <li key={link.path}>
                   <Link
                     href={link.path}
-                    className={`font-inherit text-[15px] font-medium p-0 transition-colors duration-300 relative after:content-[''] after:absolute after:bottom-[-3px] after:left-0 after:right-0 after:h-[2px] after:bg-gradient-to-r after:from-[#6366f1] after:to-[#a855f7] after:transition-transform after:duration-300 after:rounded ${isActive ? 'text-white after:scale-x-100' : 'text-white/75 hover:text-white after:scale-x-0 hover:after:scale-x-100'}`}
+                    className={`font-inherit text-[15px] font-medium p-0 transition-colors duration-300 relative after:content-[''] after:absolute after:bottom-[-3px] after:left-0 after:right-0 after:h-[2px] after:bg-gradient-to-r after:from-[#6366f1] after:to-[#a855f7] after:transition-transform after:duration-300 after:rounded ${isActive ? 'text-white after:scale-x-100' : 'text-white/85 hover:text-white after:scale-x-0 hover:after:scale-x-100'}`}
                   >
                     {link.label}
                   </Link>
@@ -85,7 +85,7 @@ export default function Navbar() {
             <li key={link.path} className="w-full border-b border-white/5">
               <Link
                 href={link.path}
-                className={`block w-full py-4 text-left text-[16px] font-medium transition-colors ${isActive ? 'text-white' : 'text-white/75 hover:text-white'}`}
+                className={`block w-full py-4 text-left text-[16px] font-medium transition-colors ${isActive ? 'text-white' : 'text-white/85 hover:text-white'}`}
                 onClick={() => setMenuOpen(false)}
               >
                 {link.label}

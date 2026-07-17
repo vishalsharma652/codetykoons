@@ -55,7 +55,7 @@ export default function Faq() {
           <h2 className="font-['Outfit'] text-[clamp(2rem,4vw,2.8rem)] font-extrabold text-white tracking-tight mb-4">
             Frequently Asked <span className="bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent">Questions</span>
           </h2>
-          <p className="text-white/55 text-base max-w-[480px] mx-auto leading-relaxed">
+          <p className="text-white/75 text-base max-w-[480px] mx-auto leading-relaxed">
             Got questions? We have answers. Learn more about how we help your business thrive.
           </p>
         </div>
@@ -72,18 +72,21 @@ export default function Faq() {
               >
                 <button
                   onClick={() => toggleFaq(index)}
+                  aria-expanded={isOpen}
+                  aria-controls={`faq-answer-${index}`}
                   className="w-full flex items-center justify-between p-6 text-left cursor-pointer border-none bg-transparent text-white font-semibold text-lg font-['Outfit'] gap-4 select-none"
                 >
                   <span>{faq.question}</span>
-                  <div className={`w-8 h-8 rounded-full flex items-center justify-center bg-white/5 text-[#6366f1] transition-transform duration-300 ${isOpen ? 'rotate-180 bg-[#6366f1]/10' : ''}`}>
+                  <div className={`w-8 h-8 rounded-full flex items-center justify-center bg-white/5 text-[#6366f1] transition-transform duration-300 ${isOpen ? 'rotate-180 bg-[#6366f1]/10' : ''}`} aria-hidden="true">
                     {isOpen ? <FiMinus size={18} /> : <FiPlus size={18} />}
                   </div>
                 </button>
                 
                 <div
+                  id={`faq-answer-${index}`}
                   className={`transition-all duration-300 overflow-hidden ${isOpen ? 'max-h-[300px] border-t border-white/5' : 'max-h-0'}`}
                 >
-                  <p className="p-6 text-white/60 text-[15px] leading-relaxed m-0 bg-white/[0.005]">
+                  <p className="p-6 text-white/75 text-[15px] leading-relaxed m-0 bg-white/[0.005]">
                     {faq.answer}
                   </p>
                 </div>

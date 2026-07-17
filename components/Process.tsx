@@ -62,7 +62,7 @@ export default function Process() {
           <h2 className="font-['Outfit'] text-[clamp(2rem,4vw,2.8rem)] font-extrabold text-white tracking-tight mb-4">
             How We <span className="bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent">Work</span>
           </h2>
-          <p className="text-white/55 text-base max-w-[480px] mx-auto leading-relaxed">
+          <p className="text-white/75 text-base max-w-[480px] mx-auto leading-relaxed">
             Our structured, step-by-step methodology ensures high-quality execution from idea to deployment.
           </p>
         </div>
@@ -80,7 +80,7 @@ export default function Process() {
                 <span className="font-['Outfit'] text-4xl font-extrabold text-white/10 group-hover:text-white/20 transition-colors duration-300">
                   {step.num}
                 </span>
-                <div className={`w-[48px] h-[48px] rounded-xl flex items-center justify-center bg-gradient-to-r ${step.color} text-white shadow-lg`}>
+                <div className={`w-[48px] h-[48px] rounded-xl flex items-center justify-center bg-gradient-to-r ${step.color} text-white shadow-lg`} aria-hidden="true">
                   {step.icon}
                 </div>
               </div>
@@ -89,7 +89,7 @@ export default function Process() {
               <h3 className="font-['Outfit'] text-lg font-bold text-white mb-3 tracking-tight group-hover:text-[#a5b4fc] transition-colors duration-300">
                 {step.title}
               </h3>
-              <p className="text-white/50 text-[13.5px] leading-relaxed m-0">
+              <p className="text-white/70 text-[13.5px] leading-relaxed m-0">
                 {step.desc}
               </p>
             </div>

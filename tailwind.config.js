@@ -15,8 +15,8 @@ module.exports = {
         'text-secondary': 'rgba(255, 255, 255, 0.6)',
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        outfit: ['Outfit', 'sans-serif'],
+        sans: ['var(--font-inter)', 'sans-serif'],
+        outfit: ['var(--font-outfit)', 'sans-serif'],
       },
     },
   },
