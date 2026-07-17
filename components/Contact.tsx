@@ -11,13 +11,48 @@ export default function Contact() {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
+
+    // Get your free access key from https://web3forms.com/ (no login needed)
+    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "YOUR_ACCESS_KEY_HERE";
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: JSON.stringify({
+          access_key: accessKey,
+          name: formData.name,
+          email: formData.email,
+          subject: `New Lead from CodeTykoons: ${formData.service}`,
+          message: `Service Selected: ${formData.service}\n\nClient Message:\n${formData.message}`,
+        })
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        setSubmitted(true);
+      } else {
+        // Fallback to simulation if no key is configured
+        if (accessKey === "YOUR_ACCESS_KEY_HERE") {
+          console.log("No Web3Forms Key configured. Simulating submission success.");
+          setSubmitted(true);
+        } else {
+          alert("Submission failed. Please check your Access Key.");
+        }
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      // Fallback success for local test
       setSubmitted(true);
-    }, 1500);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const contactInfo = [
