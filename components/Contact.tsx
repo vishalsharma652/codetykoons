@@ -1,6 +1,6 @@
 'use client';
 import { useState, ChangeEvent, FormEvent } from 'react';
-import { FiMail, FiPhone, FiMapPin, FiInstagram, FiLinkedin, FiTwitter, FiSend } from 'react-icons/fi';
+import { FiMail, FiPhone, FiMapPin, FiSend } from 'react-icons/fi';
 
 export default function Contact() {
   const [formData, setFormData] = useState({ name: '', email: '', service: '', message: '' });
@@ -108,24 +108,6 @@ export default function Contact() {
                 </div>
               </a>
             ))}
-
-            <div className="mt-2">
-              <span className="block text-[11px] text-white/40 mb-3 uppercase tracking-widest">Follow Us</span>
-              <div className="flex gap-3">
-                {/* Instagram */}
-                <button className="w-[42px] h-[42px] rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white/60 hover:bg-gradient-to-br hover:from-[#6366f1] hover:to-[#a855f7] hover:border-transparent hover:text-white hover:-translate-y-[3px] hover:shadow-[0_8px_20px_rgba(99,102,241,0.4)] transition-all duration-300 cursor-pointer" id="social-instagram" aria-label="Instagram">
-                  <FiInstagram size={18} />
-                </button>
-                {/* LinkedIn */}
-                <button className="w-[42px] h-[42px] rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white/60 hover:bg-gradient-to-br hover:from-[#6366f1] hover:to-[#a855f7] hover:border-transparent hover:text-white hover:-translate-y-[3px] hover:shadow-[0_8px_20px_rgba(99,102,241,0.4)] transition-all duration-300 cursor-pointer" id="social-linkedin" aria-label="LinkedIn">
-                  <FiLinkedin size={18} />
-                </button>
-                {/* Twitter/X */}
-                <button className="w-[42px] h-[42px] rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white/60 hover:bg-gradient-to-br hover:from-[#6366f1] hover:to-[#a855f7] hover:border-transparent hover:text-white hover:-translate-y-[3px] hover:shadow-[0_8px_20px_rgba(99,102,241,0.4)] transition-all duration-300 cursor-pointer" id="social-twitter" aria-label="Twitter">
-                  <FiTwitter size={18} />
-                </button>
-              </div>
-            </div>
           </div>
 
           {/* Contact Form */}
