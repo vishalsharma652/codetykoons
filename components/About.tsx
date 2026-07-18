@@ -53,13 +53,14 @@ export default function About() {
             <div className="absolute -inset-1 bg-gradient-to-r from-[#6366f1] to-[#a855f7] rounded-[33px] blur-lg opacity-25 group-hover:opacity-40 transition duration-1000 z-0" />
             
             {/* Content Image Container */}
-            <div className="relative z-10 overflow-hidden rounded-[24px] bg-white p-2">
+            <div className="relative z-10 overflow-hidden rounded-[24px] border border-white/5">
               <Image
-                src="/logo.jpeg"
-                alt="CodeTykoons Logo"
+                src="/about_showcase.jpg"
+                alt="CodeTykoons Digital Illustration"
                 width={320}
                 height={320}
-                className="w-full h-auto object-contain rounded-[18px]"
+                className="w-full h-auto object-cover rounded-[24px] hover:scale-105 transition-transform duration-500"
+                priority
               />
             </div>
             
