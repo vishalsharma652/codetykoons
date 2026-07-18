@@ -48,18 +48,18 @@ export default function About() {
         
         {/* Left Column (Logo Emblem Showcase Card) */}
         <div className="relative flex justify-center lg:justify-start">
-          <div className={`relative w-full max-w-[360px] p-6 bg-white/[0.02] border border-white/10 rounded-[32px] shadow-2xl backdrop-blur-md transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <div className={`relative w-full max-w-[360px] bg-white/[0.02] border border-white/10 rounded-[32px] shadow-2xl backdrop-blur-md transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             {/* Glow backdrop */}
             <div className="absolute -inset-1 bg-gradient-to-r from-[#6366f1] to-[#a855f7] rounded-[33px] blur-lg opacity-25 group-hover:opacity-40 transition duration-1000 z-0" />
             
             {/* Content Image Container */}
-            <div className="relative z-10 overflow-hidden rounded-[24px] border border-white/5">
+            <div className="relative z-10 overflow-hidden rounded-[32px] border border-white/5">
               <Image
                 src="/about_showcase.jpg"
                 alt="CodeTykoons Digital Illustration"
-                width={320}
-                height={320}
-                className="w-full h-auto object-cover rounded-[24px] hover:scale-105 transition-transform duration-500"
+                width={360}
+                height={360}
+                className="w-full h-auto object-cover rounded-[32px] hover:scale-105 transition-transform duration-500"
                 priority
               />
             </div>
